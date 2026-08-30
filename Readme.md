@@ -36,6 +36,9 @@ Você ganha a estrutura. A lógica é sua.
 | `cors` | Controle de origens | básico, intermediário, enterprise |
 | `express-rate-limit` | Limite de requisições | básico, login, cadastro, api, enterprise |
 | `hpp` | Previne HTTP Parameter Pollution | básico, intermediário, enterprise |
+| `cookie-parser` | Cookies seguros | básico, intermediário, enterprise |
+| `express-mongo-sanitize` | Previne NoSQL injection | básico, intermediário, enterprise |
+| `xss` | Sanitiza input contra XSS | básico, intermediário, enterprise |
 
 ---
 
@@ -43,7 +46,7 @@ Você ganha a estrutura. A lógica é sua.
 
 ```
 TS/
-├── express/
+├── models Express/
 │   ├── basic.ts
 │   ├── intermediario.ts
 │   └── avancado.ts
@@ -65,6 +68,18 @@ TS/
 │   ├── model-basico.ts
 │   ├── model-intermediario.ts
 │   └── model-enterprise.ts
+├── models cookie-parser/
+│   ├── model-basico.ts
+│   ├── model-intermediario.ts
+│   └── model-enterprise.ts
+├── models Express Mong/
+│   ├── model-basico.ts
+│   ├── model-intermediario.ts
+│   └── model-enterprise.ts
+├── model xss/
+│   ├── model-bacis.ts
+│   ├── model-Intermediário.ts
+│   └── model-Enterprise.ts
 PHP/
 ├── Php Puro/
 │   ├── basic.php
@@ -81,7 +96,10 @@ PHP/
 
 ```bash
 # Node/TS
-npm install helmet cors express-rate-limit hpp
+npm install helmet cors express-rate-limit hpp cookie-parser express-mongo-sanitize xss
+
+# tipos
+npm install -D @types/cookie-parser @types/express-mongo-sanitize @types/xss
 
 # PHP Puro / Laravel
 composer require firebase/php-jwt slim/slim slim/psr7 monolog/monolog vlucas/phpdotenv
