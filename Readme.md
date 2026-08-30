@@ -22,8 +22,11 @@ Você ganha a estrutura. A lógica é sua.
 > ⚠️ Algumas libs como **JWT** e **Winston (logs)** foram deixadas de fora propositalmente —
 > cada dev implementa do seu jeito. Use a lib que preferir.
 
-> ❌ **Java e C# não estão disponíveis** — frameworks como Spring Boot e ASP.NET são muito
-> verbosos para esqueletos simples. Cada lib vira uma classe, uma annotation, um Bean.
+> ⚠️ **Java** tem suporte limitado — apenas CORS e CSRF estão disponíveis.
+> O ecossistema Spring é muito verboso para esqueletos simples.
+> Contribuições da comunidade são bem-vindas.
+
+> ❌ **C#** não está disponível — mesma situação do Java com ASP.NET.
 > Contribuições da comunidade são bem-vindas.
 
 ---
@@ -77,9 +80,9 @@ TS/
 │   ├── model-intermediario.ts
 │   └── model-enterprise.ts
 ├── model xss/
-│   ├── model-bacis.ts
-│   ├── model-Intermediário.ts
-│   └── model-Enterprise.ts
+│   ├── model-basico.ts
+│   ├── model-intermediario.ts
+│   └── model-enterprise.ts
 PHP/
 ├── Php Puro/
 │   ├── basic.php
@@ -88,6 +91,15 @@ PHP/
 └── Php Laravel/
     ├── basic.php
     └── intermediario.php
+Java/
+├── model-cors/
+│   ├── CorsConfig-basic.java
+│   ├── CorsConfig-intermediario.java
+│   └── CorsConfig-enterprise.java
+└── model-csrf/
+    ├── CsrfConfig-basic.java
+    ├── CsrfConfig-intermediario.java
+    └── CsrfConfig-enterprise.java
 ```
 
 ---
@@ -103,6 +115,10 @@ npm install -D @types/cookie-parser @types/express-mongo-sanitize @types/xss
 
 # PHP Puro / Laravel
 composer require firebase/php-jwt slim/slim slim/psr7 monolog/monolog vlucas/phpdotenv
+
+# Java — adiciona no pom.xml
+# org.springframework.boot:spring-boot-starter-security
+# org.springframework.boot:spring-boot-starter-web
 ```
 
 Escolha o nível, copie o arquivo e preencha os campos vazios.
